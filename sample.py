@@ -202,80 +202,80 @@ First few Fibonacci numbers are 0,1,1,2,3,5,8,13
 randomly take some words from the user input and then include numbers, special characters and capital
 letters to generate the password. Also, keep a check that password length is more than 8 characters.
 """
-import random
-import array
+# import random
+# import array
  
-db = {} #blank dictionary
+# db = {} #blank dictionary
 
-def Creat_Pass(firstname,password): # function with parameters..
-    db['name'] = firstname
-    db['password'] = password
-    print("Password created successfully...")
+# def Creat_Pass(firstname,password): # function with parameters..
+#     db['name'] = firstname
+#     db['password'] = password
+#     print("Password created successfully...")
 
-def Access_Pass(name):
-    if name == db['name']:
-        return db['password']
+# def Access_Pass(name):
+#     if name == db['name']:
+#         return db['password']
                
-    else:
-        return "User not found.."
+#     else:
+#         return "User not found.."
     
-status = True
-while status:
+# status = True
+# while status:
 
-    menu = """
-            1) press 1 for creating Password
-            2) press 2 for accessing Password
-            3) press 3 for exit
-    """
-    print(menu)
+#     menu = """
+#             1) press 1 for creating Password
+#             2) press 2 for accessing Password
+#             3) press 3 for exit
+#     """
+#     print(menu)
 
-    choice = int(input("Enter your choice: "))
-    if choice == 1:
-        name = input("Enter name: ")
+#     choice = int(input("Enter your choice: "))
+#     if choice == 1:
+#         name = input("Enter name: ")
     
-        MAX_LEN = 8
+#         MAX_LEN = 8
 
-        DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] 
+#         DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] 
 
-        LOCASE_CHARACTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-                            'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q',
-                            'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-                            'z']
+#         LOCASE_CHARACTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+#                             'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q',
+#                             'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+#                             'z']
         
-        UPCASE_CHARACTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-                            'I', 'J', 'K', 'M', 'N', 'O', 'P', 'Q',
-                            'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
-                            'Z']
+#         UPCASE_CHARACTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+#                             'I', 'J', 'K', 'M', 'N', 'O', 'P', 'Q',
+#                             'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+#                             'Z']
         
-        SYMBOLS = ['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>',
-                '*', '(', ')', '<']
+#         SYMBOLS = ['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>',
+#                 '*', '(', ')', '<']
 
-        COMBINED_LIST = DIGITS + UPCASE_CHARACTERS + LOCASE_CHARACTERS + SYMBOLS
+#         COMBINED_LIST = DIGITS + UPCASE_CHARACTERS + LOCASE_CHARACTERS + SYMBOLS
 
-        rand_digit = random.choice(DIGITS)
-        rand_upper = random.choice(UPCASE_CHARACTERS)
-        rand_lower = random.choice(LOCASE_CHARACTERS)
-        rand_symbol = random.choice(SYMBOLS)
+#         rand_digit = random.choice(DIGITS)
+#         rand_upper = random.choice(UPCASE_CHARACTERS)
+#         rand_lower = random.choice(LOCASE_CHARACTERS)
+#         rand_symbol = random.choice(SYMBOLS)
         
-        temp_pass = rand_digit + rand_upper + rand_lower + rand_symbol
+#         temp_pass = rand_digit + rand_upper + rand_lower + rand_symbol
         
-        for x in range(MAX_LEN - 4):
-            temp_pass = temp_pass + random.choice(COMBINED_LIST)
+#         for x in range(MAX_LEN - 4):
+#             temp_pass = temp_pass + random.choice(COMBINED_LIST)
         
-            temp_pass_list = array.array('u', temp_pass)
-            random.shuffle(temp_pass_list)
+#             temp_pass_list = array.array('u', temp_pass)
+#             random.shuffle(temp_pass_list)
         
-        password = ""
-        for x in temp_pass_list:
-                password = password + x
+#         password = ""
+#         for x in temp_pass_list:
+#                 password = password + x
                 
-        print(password)
+#         print(password)
 
-        Creat_Pass(name,password)
+#         Creat_Pass(name,password)
 
-    elif choice == 2:
-        name = input("Enter name: ")
-        print(Access_Pass(name))
+#     elif choice == 2:
+#         name = input("Enter name: ")
+#         print(Access_Pass(name))
 
-    elif choice == 3:
-        status = False
+#     elif choice == 3:
+#         status = False
